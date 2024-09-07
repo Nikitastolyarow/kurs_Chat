@@ -1,15 +1,13 @@
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.io.PrintWriter;
+import java.io.*;
 import java.net.ServerSocket;
 import java.net.Socket;
+import java.util.Properties;
 
 public class Server {
+    private static int port;
     public static void main(String[] args) {
-        System.out.println("Старт сервера ");
-        int port = 8088;
-
+        loadsettings();
+        System.out.println("Старт сервера с портом " + port);
         try (ServerSocket serverSocket = new ServerSocket(port)) {
             while (true) {
                 try (Socket clientSocket = serverSocket.accept();
@@ -25,6 +23,16 @@ public class Server {
             }
         } catch (IOException e) {
             System.out.println("Ошибка при запуске сервера: " + e.getMessage());
+        }
+    }
+    private static void loadsettings()  {
+        Properties properties = new Properties();
+        try (BufferedReader reader = new BufferedReader(new FileReader("settings.txt"))){
+            properties.load(reader);
+            port= Integer.parseInt(properties.getProperty("port"));
+            // System.out.println("Port: " + port);
+        } catch (IOException e) {
+            System.out.println("Ошибка при загрузке файла настроек: " + e.getMessage());
         }
     }
 }
