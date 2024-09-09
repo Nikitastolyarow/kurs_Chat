@@ -1,3 +1,5 @@
+import log.logServ;
+
 import java.io.*;
 import java.net.ServerSocket;
 import java.net.Socket;
@@ -17,6 +19,7 @@ public class Server {
                     System.out.printf("Новый пользователь! Порт подключения -> %d%n ", clientSocket.getPort());
                     final String name = in.readLine();
                     out.println(String.format("Привет %s!,Твой порт подключения: %d", name, clientSocket.getPort()));
+                    logServ.logLogin(name, "Присоеденился к чату" );
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
