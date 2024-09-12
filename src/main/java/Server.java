@@ -40,6 +40,7 @@ public class Server {
                     while ((message = in.readLine()) != null) {
                         logServ.logLogin(name, message);
                         System.out.printf("%s: %s%n", name, message);
+                        mailing(name,message);
                     }
                     logServ.logLogin(name,"Покинул чат");
                 } catch (IOException e) {
@@ -65,6 +66,13 @@ public class Server {
             // System.out.println("Port: " + port);
         } catch (IOException e) {
             System.out.println("Ошибка при загрузке файла настроек: " + e.getMessage());
+        }
+    }
+    private static void mailing(String name , String message){
+        synchronized (clients) {
+            for (PrintWriter writer : clients) {
+                writer.println(name + " -> " +  message);
+            }
         }
     }
 }
