@@ -68,7 +68,7 @@
 Логирование действий пользователей осуществляется с использованием класса [LogServ](https://github.com/Nikitastolyarow/kurs_Chat/blob/705b48b5dcfb1a3253e27dd1a10650fd1f72c362/src/main/java/log/LogServ.java#L9). Можно модифицировать эту часть кода для настройки логирования по нужным требованиям.
 
 ## Тесты
-
+![] (https://github.com/Nikitastolyarow/kurs_Chat/blob/main/src/main/resources/интеграционный%20тест%20сервера%20и%20клиента.jpg)
 ## Интеграционный тест сервера, с помощью telnet
 
 ## интеграционный тест сервера и клиента
