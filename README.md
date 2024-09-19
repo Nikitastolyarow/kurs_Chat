@@ -70,8 +70,11 @@
 ## Тесты
 
 ## Интеграционный тест сервера, с помощью telnet
-![](/src/main/resources/tel1.png)
+
+![](src/main/resources/tel1.jpg)
+
 ## Интеграционный тест сервера и клиента
-![](/src/main/resources/tel2.png)
+![](src/main/resources/tel2.jpg)
+
 ## Тест сервера при подключении нескольких клиентов
-![](/src/main/resources/tel3.png)
+![](/src/main/resources/tel3.jpg)
