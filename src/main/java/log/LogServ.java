@@ -14,7 +14,7 @@ public class LogServ {
                     .format(new Date());
             writter.write(String.format("%s, Nickname:[%s]-> %s%n", dataLog, name, message));
         } catch (IOException e) {
-            System.out.println("Ошибка записи" + e.getMessage());
+            System.out.println("Ошибка записи" + e.getMessage());  //Recording error
         }
     }
 }
