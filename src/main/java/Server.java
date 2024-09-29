@@ -8,7 +8,7 @@ import java.util.List;
 import java.util.Properties;
 
 public class Server {
-    private static int port;
+    static int port;
     private static final List<PrintWriter> clients = new ArrayList<>();
 
     public static void main(String[] args) {
